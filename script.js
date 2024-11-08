@@ -44,8 +44,12 @@ function startGame() {
 
 // Sonraki soruya geç
 function nextQuestion() {
-    resetState();
-    showQuestion(questions[currentQuestionIndex]);
+    if (currentQuestionIndex < questions.length) {
+        resetState();
+        showQuestion(questions[currentQuestionIndex]);
+    } else {
+        showResult();
+    }
 }
 
 // Soruyu göster
@@ -68,6 +72,7 @@ function selectAnswer(isCorrect) {
     } else {
         document.getElementById("feedback").innerText = "Yanlış cevap, tekrar deneyin.";
     }
+    currentQuestionIndex++; // Sonraki soruya geçmek için index'i artır
     document.getElementById("next-btn").classList.remove("hide");
 }
 
