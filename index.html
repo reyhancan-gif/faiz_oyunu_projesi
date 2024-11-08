@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faiz ve Anüite Hesaplama Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Faiz ve Anüite Hesaplama Oyunu</h1>
+        
+        <div id="intro">
+            <label for="name">Adınız ve Soyadınız:</label>
+            <input type="text" id="name" placeholder="Adınızı girin" required>
+            <button onclick="startGame()">Oyuna Başla</button>
+        </div>
+        
+        <div id="question-container" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="answer-buttons" class="btn-container"></div>
+            <p id="feedback"></p>
+            <button id="next-btn" class="hide" onclick="nextQuestion()">Sonraki Soru</button>
+        </div>
+        
+        <div id="result-container" class="hide">
+            <h2>Oyun Sonu</h2>
+            <p id="result"></p>
+            <button onclick="resetGame()">Yeniden Oyna</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
